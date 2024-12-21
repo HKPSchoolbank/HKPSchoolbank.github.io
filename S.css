@@ -39,7 +39,7 @@ img:hover {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     animation: changeColor 5s infinite alternate;
     line-height: 1.5;
@@ -103,3 +103,43 @@ footer h1 {
     font-weight: 500;
     margin: 0;
 }
+h2 {
+    font-family: "Lugrasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    margin-top: -10px;  /* ขึ้นข้างบน */
+    font-weight: bold;  /* ให้ตัวอักษรหนา */
+    color: transparent;  /* ทำให้ตัวอักษรโปร่งใส */
+    background: linear-gradient(135deg, #ffffff, #ffffff);  /* ใส่สีพื้นหลังที่เป็นกราเดียนท์ */
+    -webkit-background-clip: text;  /* ทำให้กราเดียนท์แสดงที่ตัวอักษร */
+    background-clip: text;  /* ทำให้กราเดียนท์แสดงที่ตัวอักษร */
+    text-shadow: 
+        3px 3px 0 pink,  /* เงาเล็กน้อยด้านขวา */
+        5px 5px 5px rgba(0, 0, 0, 0.3); /* เงาเบลอเพื่อเพิ่มมิติ */
+    animation: changeColor1 5s infinite alternate;
+    line-height: 1.5;
+}
+
+@keyframes changeColor1 {
+    0% {
+        color: #0035AD; /* สีน้ำเงินเข้ม */
+    }
+    20% {
+        color: #0056D2; /* น้ำเงินสดใส */
+    }
+    40% {
+        color: #0070FF; /* น้ำเงินอ่อน */
+    }
+    60% {
+        color: #339CFF; /* ฟ้าอ่อน */
+    }
+    80% {
+        color: #0056D2; /* กลับมาน้ำเงินสดใส */
+    }
+    100% {
+        color: #0035AD; /* กลับมาน้ำเงินเข้ม */
+    }
+}
+
