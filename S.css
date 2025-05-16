@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Prompt:wght@400;600&display=swap');
 
+/* ส่วนของพื้นหลังและโครงสร้างหลัก */
 body {
     font-family: 'Prompt', 'Orbitron', sans-serif;
     margin: 0;
@@ -9,10 +10,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #2e003e, #3a0047, #5e005e);
+    background: linear-gradient(135deg, #2e003e, #5e005e, #ff007f, #ff66b2);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
     color: #fff;
     text-align: center;
     line-height: 1.6;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -22,69 +31,101 @@ body {
     backdrop-filter: blur(12px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
 }
 
+/* ส่วนหัวข้อหลัก */
 h1 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    animation: neonPulse 2.5s infinite alternate;
+    color: #ff66cc;
+    text-shadow:
+        0 0 5px #ff33cc,
+        0 0 10px #ff33cc,
+        0 0 15px #ff33cc;
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 5px #ff66cc; }
+    100% { text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff33cc; }
+}
+
+/* ส่วนรูปภาพ */
+.image-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.image-container:hover .profile-image {
+    transform: scale(1.05);
+}
+
+/* ปุ่มแบบเดิม */
+.button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
     color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #ff66cc, #ff1493);
+    border-radius: 50px;
+    box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff33cc;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: glow 3s infinite alternate;
+    border: none;
+    cursor: pointer;
 }
 
-h2 {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-    color: #ffd7f4;
-    border-bottom: 2px solid #ff66cc;
-    padding-bottom: 0.5rem;
+.button:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff33cc;
 }
 
-.content-section {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ff69b4; }
+    100% { box-shadow: 0 0 25px #ff33cc, 0 0 35px #ff33cc; }
 }
 
-/* ภาษาไทย */
+/* ส่วนข้อความสองภาษา */
 .thai-text {
     font-family: 'Prompt', sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
+    margin: 0.5rem 0;
 }
 
-/* ภาษาอังกฤษ */
 .english-text {
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-size: 1.2rem;
     letter-spacing: 0.05rem;
+    margin: 0.5rem 0;
 }
 
-.button {
-    display: inline-block;
-    padding: 12px 30px;
-    margin: 1rem;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: #fff;
-    background: linear-gradient(90deg, #c6426e, #a8325c);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(168, 50, 92, 0.4);
-}
-
+/* ส่วนท้ายหน้า */
 footer {
     margin-top: 3rem;
     padding: 1.5rem;
     width: 100%;
     background: rgba(70, 0, 70, 0.8);
     border-top: 1px solid #ff66cc;
+    backdrop-filter: blur(5px);
 }
 
 /* Responsive Design */
@@ -97,7 +138,8 @@ footer {
         font-size: 2rem;
     }
     
-    h2 {
-        font-size: 1.6rem;
+    .button {
+        padding: 10px 25px;
+        font-size: 1rem;
     }
 }
