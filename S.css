@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 body {
-    font-family: "Mitr", serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,30 +9,25 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffe6f0, #ffc2d4, #ff99b6);
+    background: linear-gradient(135deg, #2e003e, #5e005e, #ff007f, #ff66b2);
     background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
-    color: #333;
+    animation: gradientBG 12s ease infinite;
+    color: #fff;
     text-align: center;
 }
 
 @keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 img {
     max-width: 200px;
     height: auto;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #ff69b4;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -39,107 +36,89 @@ img:hover {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
-    animation: changeColor 5s infinite alternate;
-    line-height: 1.5;
+    animation: neonPulse 2.5s infinite alternate;
+    color: #ff66cc;
+    text-shadow:
+        0 0 5px #ff33cc,
+        0 0 10px #ff33cc,
+        0 0 15px #ff33cc;
 }
 
-@keyframes changeColor {
-    0% {
-        color: #ff7eb3;
-    }
-    25% {
-        color: #ff758c;
-    }
-    50% {
-        color: #ff5f6d;
-    }
-    75% {
-        color: #ff466f;
-    }
-    100% {
-        color: #ff1a5f;
-    }
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ffccff, #ff99cc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow:
+        1px 1px 2px rgba(255, 105, 180, 0.5),
+        2px 2px 4px rgba(255, 20, 147, 0.4);
+    animation: changeColor1 6s infinite alternate;
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 5px #ff66cc; }
+    100% { text-shadow: 0 0 20px #ff66cc, 0 0 30px #ff33cc; }
+}
+
+@keyframes changeColor1 {
+    0%   { color: #ff99cc; }
+    25%  { color: #ff66b2; }
+    50%  { color: #ff33a6; }
+    75%  { color: #ff1493; }
+    100% { color: #ff66cc; }
 }
 
 a {
     display: inline-block;
     padding: 12px 30px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    color: white;
-    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    color: #fff;
+    background: linear-gradient(90deg, #ff66cc, #ff1493);
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff33cc;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: glow 3s infinite alternate;
 }
 
 a:hover {
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff33cc;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ff69b4; }
+    100% { box-shadow: 0 0 25px #ff33cc, 0 0 35px #ff33cc; }
 }
 
 footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #f0f8ff;
+    background-color: rgba(255, 192, 203, 0.1);
+    backdrop-filter: blur(10px);
     padding: 10px 0;
     text-align: center;
     font-size: 1rem;
-    color: #333;
+    color: #fff;
+    border-top: 1px solid #ff66cc;
 }
 
 footer p {
     margin: 0;
-    font-size: 1rem;
-    color: #666;
+    font-size: 0.9rem;
+    color: #ffb6c1;
 }
+
 footer h1 {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
-    margin: 0;
-}
-h2 {
-    font-family: "Lugrasimo", serif;
+    font-size: 1.1rem;
     font-weight: 400;
-    font-style: normal;
-    font-size: 1.9rem;
-    margin-bottom: 10px;
-    margin-top: -10px;  /* ขึ้นข้างบน */
-    font-weight: bold;  /* ให้ตัวอักษรหนา */
-    color: transparent;  /* ทำให้ตัวอักษรโปร่งใส */
-    background: linear-gradient(135deg, #ffffff, #ffffff);  /* ใส่สีพื้นหลังที่เป็นกราเดียนท์ */
-    -webkit-background-clip: text;  /* ทำให้กราเดียนท์แสดงที่ตัวอักษร */
-    background-clip: text;  /* ทำให้กราเดียนท์แสดงที่ตัวอักษร */
-    text-shadow: 
-        3px 3px 0 pink,  /* เงาเล็กน้อยด้านขวา */
-        5px 5px 5px rgba(0, 0, 0, 0.3); /* เงาเบลอเพื่อเพิ่มมิติ */
-    animation: changeColor1 5s infinite alternate;
-    line-height: 1.5;
-}
-
-@keyframes changeColor1 {
-    0% {
-        color: #0035AD; /* สีน้ำเงินเข้ม */
+    color: #ffe6f0;
+    margin: 0;
     }
-    20% {
-        color: #0056D2; /* น้ำเงินสดใส */
-    }
-    40% {
-        color: #0070FF; /* น้ำเงินอ่อน */
-    }
-    60% {
-        color: #339CFF; /* ฟ้าอ่อน */
-    }
-    80% {
-        color: #0056D2; /* กลับมาน้ำเงินสดใส */
-    }
-    100% {
-        color: #0035AD; /* กลับมาน้ำเงินเข้ม */
-    }
-}
-
