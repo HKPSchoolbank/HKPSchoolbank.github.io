@@ -6,192 +6,167 @@
   <title>HKPSB - ธนาคารโรงเรียนหันคาพิทยาคม</title>
   <link rel="icon" type="image/png" href="imgs/2.png">
   <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
   <style>
     :root {
       --chula-pink: #F1678D;
-      --chula-light-pink: #FFD6E0;
-      --chula-dark-gray: #414141;
-      --chula-light-gray: #F0F0F0;
+      --chula-dark-pink: #E14E75;
+      --chula-gray: #414141;
+      --chula-light-gray: #F5F5F5;
     }
     
     html, body {
       height: 100%;
+      width: 100%;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      overflow: hidden;
     }
     
     body {
       font-family: 'Mitr', sans-serif;
-      background: linear-gradient(135deg, var(--chula-light-gray) 0%, white 100%);
-      color: var(--chula-dark-gray);
-      height: 100vh;
-      width: 100vw;
-      margin: 0;
-      overflow-x: hidden;
+      background: var(--chula-light-gray);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 0;
       text-align: center;
+      color: var(--chula-gray);
     }
     
-    .container {
-      max-width: 90%;
-      width: 800px;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      padding: 40px 20px;
-      box-shadow: 0 10px 30px rgba(241, 103, 141, 0.15);
-      border: 2px solid var(--chula-pink);
-      margin: 0;
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      width: 100%;
+      padding: 20px 0;
     }
     
-    .logo {
-      width: 200px;
-      height: 200px;
+    .bank-logo {
+      width: 180px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--chula-pink);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-    
-    .logo:hover {
-      transform: scale(1.05);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
     
     h1 {
       color: var(--chula-pink);
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 0 0 10px 0;
     }
     
     h2 {
-      color: var(--chula-dark-gray);
-      font-size: 1.8rem;
+      color: var(--chula-gray);
+      font-size: 1.5rem;
       font-weight: 400;
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
     }
     
-    .btn {
-      display: inline-block;
-      background: var(--chula-pink);
+    .button {
+      background-color: var(--chula-pink);
       color: white;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      font-weight: 500;
+      padding: 12px 35px;
+      border-radius: 30px;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(241, 103, 141, 0.3);
-      transition: all 0.3s ease;
-      margin-top: 20px;
-      position: relative;
-      overflow: hidden;
+      font-size: 1.2rem;
+      font-weight: 400;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(241, 103, 141, 0.3);
     }
     
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(241, 103, 141, 0.4);
-      background: #e64a76;
+    .button:hover {
+      background-color: var(--chula-dark-pink);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(241, 103, 141, 0.4);
     }
     
-    .btn::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: 0.5s;
-    }
-    
-    .btn:hover::after {
-      left: 100%;
+    .button:active {
+      transform: translateY(0);
     }
     
     footer {
-      margin-top: 40px;
-      color: var(--chula-dark-gray);
-      font-size: 0.9rem;
+      background-color: var(--chula-pink);
+      color: white;
       width: 100%;
-      padding: 15px;
-      text-align: center;
+      padding: 12px 0;
+      font-size: 0.9rem;
       font-weight: 300;
     }
     
-    .decoration {
+    /* Pink gradient decoration */
+    .top-decoration {
       position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--chula-light-pink) 0%, transparent 70%);
-      opacity: 0.4;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: var(--chula-pink);
     }
     
-    .decoration:nth-child(1) {
-      top: -100px;
-      right: -100px;
-    }
-    
-    .decoration:nth-child(2) {
-      bottom: -100px;
-      left: -100px;
-    }
-    
-    @media (max-width: 768px) {
+    /* Responsive adjustments */
+    @media (max-height: 600px) {
+      .bank-logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+      }
+      
       h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 5px;
       }
       
       h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      
+      .button {
+        padding: 10px 30px;
+        font-size: 1rem;
+      }
+      
+      footer {
+        padding: 8px 0;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
         font-size: 1.5rem;
+        padding: 0 10px;
       }
       
-      .container {
-        padding: 30px 20px;
-      }
-      
-      .logo {
-        width: 150px;
-        height: 150px;
+      h2 {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="decoration"></div>
-  <div class="decoration"></div>
+  <div class="top-decoration"></div>
   
-  <div class="container">
-    <img src="imgs/WEB.gif" alt="HKPSB" class="logo">
+  <div class="main-content">
+    <img src="imgs/WEB.gif" alt="HKPSB" class="bank-logo">
     <h1>ธนาคารโรงเรียนหันคาพิทยาคม</h1>
     <h2>Digital School Bank</h2>
-    <a href="https://sites.google.com/hunkhapit.ac.th/hkpsb/" target="_blank" class="btn" onclick="playSound()">เข้าสู่เว็บไซต์</a>
+    <a href="https://sites.google.com/hunkhapit.ac.th/hkpsb/" target="_blank" class="button" onclick="playSound()">เข้าสู่เว็บไซต์</a>
   </div>
   
   <footer>
-    <p>© 2024 ธนาคารโรงเรียนหันคาพิทยาคม All Rights Reserved.</p>
+    © 2024 ธนาคารโรงเรียนหันคาพิทยาคม All Rights Reserved.
   </footer>
-
+  
   <script>
     function playSound() {
-      // You can add sound effect code here if needed
+      // Add sound effect code here if needed
       console.log("Button clicked!");
     }
   </script>
 </body>
-</html>
+  </html>
